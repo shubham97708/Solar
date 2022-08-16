@@ -1,0 +1,239 @@
+<!-- <script src='../javascripts/vendorstock.js'></script> -->
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Store
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="/assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+
+</head>
+
+<body class="">
+    <div class="wrapper ">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                   
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title ">Your Employee's</h4>
+                                <p class="card-category"> Performance of all your Employees</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                
+                            </div>
+
+
+
+
+                            <form action='/employee/performancesearchfilter' method="POST" style="width: 100%">
+                           
+                                        <div class="card-body">
+                                            <div class="row" style="margin: 20px">
+                                                
+                                                <div class="col-12">
+                                                    Select Employee 
+                                                   
+                                                    <input list="employee" name="employee" class="col-sm-5 custom-select custom-select-sm">
+                                                    <datalist  id="employee"  > </datalist>
+
+
+
+                                                 
+                                    
+                                                </div>
+                                              
+                                               
+                                            </div>
+        
+
+                                            <div class="row" style="margin: 20px">
+                                                <div class="col-md-4">
+                                                    From: <input type="date" id="date1" name="date1" class="form-control">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    To: <input type="date" id="date2" name="date2" class="form-control">
+                                                </div>
+                                                <div class="col-md-1" >
+                                                    <button class="btn btn-primary" type='submit' name="btn" value="Filter" id="searchByDate">
+                                                        Filter
+                                                    </button>
+                                                </div>&nbsp;&nbsp;
+                                                <div class="col-md-1">
+                                                    <input type='reset' class="btn btn-danger" id="reset">
+                                                </div>&nbsp;&nbsp;
+                                                <div class="col-md-1" >
+                                                    <button class="btn btn-info btn-" name="btn" type='submit' value="Download" id="Download">
+                                                        Download
+                                                    </button>
+                                                </div>
+                                                
+                                                
+                                            </div>
+        
+                            </form>
+
+
+
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class=" text-primary">
+                                            <th>
+                                                E-ID
+                                            </th>
+                                            <th>
+                                                E-Name
+                                            </th>
+                                            <th>
+                                                E-Phone
+                                            </th>
+                                            <th>
+                                                Product
+                                            </th>
+                                            <th>
+                                               Date
+                                            </th>
+                                            <th>
+                                                Price
+                                            </th>
+                                        </thead>
+                                        <tbody>
+
+                                            <% for(var i=0; i<data.length; i++) { %>
+                                            <tr>
+                                                <td>
+                                                    <%=  data[i].empid %>
+                                                </td>
+                                                <td>
+                                                    <%=   data[i].emname %>
+                                                </td>
+                                                <td>
+                                                    <%=  data[i].emphone %>
+                                                </td>
+                                                <td>
+                                                    <%= data[i].imei %>
+                                                </td>
+                                                <td>
+
+                                                    <%
+
+                                                    var dateIn  = new Date(data[i].punch_date)
+                                                    var dayin  =  dateIn.toString()
+                                                    let datesplitin = dayin.split(" ")
+                                                    let datesjoinin = datesplitin[1] +" "+ datesplitin[2]+" " +datesplitin[3]
+                                                    
+                                                    
+                                                     %>
+                                                     <%= datesjoinin %>
+                                                </td>
+                                                <td>
+                                                    <%= data[i].price %>
+                                                </td>
+                                               
+                                            </tr>
+                                            <% } %>
+                                            <tr>
+                                            <th>
+                                                Total Count
+                                            </th>
+                                            <th>
+                                                Total Revenue
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <%= data.length %>
+                                            </td>
+                                          
+                                            <td>
+                                                <% 
+                                                ttprice = 0
+                                                if(data.length>1){
+                                                   ttprice= data[0].total_price
+                                                }
+                                                
+                                                 %>
+                                                 <%= ttprice %>
+                                            </td>
+                                        </tr>
+
+                                            
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="copyright float-right">
+                    &copy;
+                    &nbsp;Devloped By SHUBHAM SONI
+                </div>
+            </div>
+        </footer>
+    </div>
+
+ 
+
+
+
+
+    <!--   Core JS Files   -->
+    <script src="/assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+ 
+    <!-- Chartist JS -->
+    <script src="/assets/js/plugins/chartist.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="/assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="/assets/js/material-dashboard.min.js?v=2.1.0" type="text/javascript"></script>
+    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <script src="/assets/demo/demo.js"></script>
+
+
+    <script>
+
+
+        $.getJSON(`/employee/employeeall`, result => {
+        console.log(result)
+        $.each(result, (i, item) =>
+            $("#employee").append(`
+
+            <option value="${item.id}" >
+                                                            
+                ${item.id}    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             
+                ${item.phone} 
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                ${item.name}      
+            </option> `));
+           
+
+    });
+
+
+</script>
+</body>
+
+</html>

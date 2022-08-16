@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>List of Suppliers</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <a href='/supp'>Add New Supplier</a>
+  <!-- <table border='1'>
+          <caption><h3>Data show from server method 1</h3></caption>
+        <tr><th>Sn</th><th>ID</th><th>Name</th><th>Birth Date</th><th>Gender</th><th>City</th><th>Mobile</th><th>Picture</th></tr>
+          <% 
+       for(i=0;i<data.length;i++)
+       {
+         %>
+         <tr><td><%=(i+1) %></td><td><%=data[i].id%></td><td><%=data[i].name%></td><td><%=data[i].dob%></td><td><%=data[i].gender%></td><td><%=data[i].city%></td><td><%=data[i].mobile%></td><td><img src='http://localhost:3000/images/<%=data[i].picture%>' width='35' height="35"></td></tr>
+      <% }
+      %>
+
+
+    
+    </table>
+      -->
+  <table border='1' style="border-collapse: collapse">
+    <caption>
+      <h3>Data show from server method 2</h3>
+    </caption>
+    <tr>
+      <th>Sn</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Birth Date</th>
+      <th>Gender</th>
+      <th>City</th>
+      <th>Mobile</th>
+      <th>Picture</th>
+      <th>Update</th>
+    </tr>
+    <% 
+         data.map(function(item,key){
+             
+          %>
+
+    <tr>
+      <td><%=(key+1) %></td>
+      <td><%=item.id%></td>
+      <td><%=item.name%></td>
+      <td><%=item.dob%></td>
+      <td><%=item.gender%></td>
+      <td><%=item.city%></td>
+      <td><%=item.mobile%></td>
+      <td><img src='http://localhost:3000/images/<%=item.picture%>' width='35' height="35"></td>
+      <td><a href='http://localhost:3000/supp/supplierdisplaybyid?sid=<%=item.id%>'>Edit/Delete</a></td>
+    </tr>
+    <% });
+        %>
+
+
+
+  </table>
+
+
+
+
+
+
+</body>
+
+</html>

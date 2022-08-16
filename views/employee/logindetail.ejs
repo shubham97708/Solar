@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Store
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="/assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+
+    <style>
+        .dtHorizontalExampleWrapper {
+max-width: 600px;
+margin: 0 auto;
+}
+#dtHorizontalExample th, td {
+white-space: nowrap;
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
+}
+    </style>
+
+</head>
+
+<body class="">
+    <div class="wrapper ">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                   
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title ">Your Employee's</h4>
+                                <p class="card-category"> Punctuality of all your Employees</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                
+                            </div>
+
+                            <form action='/employee/loginsearchfilter' method="POST" style="width: 100%">
+                           
+                                <div class="card-body">
+                                    <div class="row" style="margin: 20px">
+                                        <div class="col-12">
+                                            Select Employee 
+                                            <input list="employee" name="employee" class="col-sm-5 custom-select custom-select-sm">
+                                            <datalist  id="employee"  > </datalist>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin: 20px">
+                                        <div class="col-md-4">
+                                            From: <input type="date" id="date1" name="date1" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            To: <input type="date" id="date2" name="date2" class="form-control">
+                                        </div>
+                                        <div class="col-md-1" >
+                                            <button class="btn btn-primary" type='submit' name="btn" value="Filter" id="searchByDate">
+                                                Filter
+                                            </button>
+                                        </div>&nbsp;&nbsp;
+                                        <div class="col-md-1">
+                                            <input type='reset' class="btn btn-danger" id="reset">
+                                        </div>&nbsp;&nbsp;
+                                        <div class="col-md-1" >
+                                            <button class="btn btn-info btn-" name="btn" type='submit' value="Download" id="Download">
+                                                Download
+                                            </button>
+                                        </div>
+                                        
+                                        
+                                    </div>
+
+                    </form>
+
+
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    
+                                    <table  id="dtHorizontalExample" class="table table-striped table-bordered table-sm" cellspacing="0"
+                                    width="100%">
+                                        <thead class=" text-primary">
+                                            <th>
+                                                Sr.
+                                            </th>
+                                            <th>
+                                                Store
+                                            </th>
+                                            <th>
+                                                E-ID
+                                            </th>
+                                            <th>
+                                                E-Name
+                                            </th>
+                                            <th>
+                                                Date
+                                            </th>
+                                            <th>
+                                                Arrival
+                                            </th>
+                                            <th>
+                                                Exit
+                                            </th>
+                                            <th>
+                                               Gps-Arr
+                                            </th>
+                                            <th>
+                                                Gps-Arr-Address
+                                             </th>
+                                            <th>
+                                                Gps-Ext
+                                            </th>
+                                            <th>
+                                                Gps-Ext-Address
+                                            </th>
+                                            <th>
+                                                W-Hour's
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <% 
+                                            var totalh=0
+                                            var totalm =0
+                                            %>
+
+                                            <% for(var i=0; i<data.length; i++) { %>
+                                            <tr>
+                                                <td>
+                                                    <%= i+1 %>
+                                                </td>
+                                                <td>
+                                                    <%=  data[i].storename %>
+                                                </td>
+                                                <td>
+                                                    <%=  data[i].empid %>
+                                                </td>
+                                                <td>
+                                                    <%=   data[i].empname %>
+                                                </td>
+                                                <td>
+                                                    <%
+
+                                                    var dateIn  = new Date(data[i].checkin_date)
+                                                    var dayin  =  dateIn.toString()
+                                                    let datesplitin = dayin.split(" ")
+                                                    let datecheckin = datesplitin[1] +" "+ datesplitin[2]+" " +datesplitin[3]
+                                                    
+                                                     %>
+                                                    <%=  datecheckin %>
+                                                </td>
+                                                <td>
+
+                                                    <% 
+                                                    
+                                                    var dates1 = new Date(data[i].checkin_date);
+                                                    var hours1 = dates1.getHours();
+                                                    var minutes1 = dates1.getMinutes();
+                                                    var ampm1 = hours1 >= 12 ? 'pm' : 'am';
+                                                    hours1 = hours1 % 12;
+                                                    hours1 = hours1 ? hours1 : 12; // the hour '0' should be '12'
+                                                    minutes1 = minutes1 < 10 ? '0'+minutes1 : minutes1;
+                                                    var strTime1 = hours1 + ':' + minutes1 + ' ' + ampm1;
+                                                   
+                                                    
+                                                    %>
+
+                                                    <%= strTime1 %>
+                                                </td>
+
+                                                <td>
+
+                                                    <% 
+                                                    var strTime2 =""
+                                                    if(data[i].checkout_date == "0000-00-00 00:00:00"){
+
+                                                        strTime2 ="----:----"
+                                                    }else{
+
+                                                    var dates2 = new Date(data[i].checkout_date);
+                                                    var hours2 = dates2.getHours();
+                                                    var minutes2 = dates2.getMinutes();
+                                                    var ampm2 = hours2 >= 12 ? 'pm' : 'am';
+                                                    hours2 = hours2 % 12;
+                                                    hours2 = hours2 ? hours2 : 12; // the hour '0' should be '12'
+                                                    minutes2 = minutes2 < 10 ? '0'+minutes2 : minutes2;
+                                                    var strTime2 = hours2 + ':' + minutes2 + ' ' + ampm2;
+                                                       
+                                                    }
+
+                                                    %>
+
+                                                    <%= strTime2 %>
+                                                </td>
+
+                                                <td>
+                                                    <% 
+                                                    
+                                                let lat1=data[i].storelat
+                                                let lon1=data[i].storelng
+                                                let unit = "K";
+                                                let lat2 = data[i].checkin_lat
+                                                let lon2 = data[i].checkin_lng
+
+                                                
+                                                if ((lat1 == lat2) && (lon1 == lon2))
+                                                    {
+                                                    return 0;
+                                                    }
+                                                else {
+                                                        var radlat1 = Math.PI * lat1/180;
+                                                        var radlat2 = Math.PI * lat2/180;
+                                                        var theta = lon1-lon2;
+                                                        var radtheta = Math.PI * theta/180;
+                                                        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+                                                        if (dist > 1) {
+                                                                        dist = 1;
+                                                                        }
+                                                                        dist = Math.acos(dist);
+                                                                        dist = dist * 180/Math.PI;
+                                                                        dist = dist * 60 * 1.1515;
+                                                        if (unit=="K") { dist = dist * 1.609344 }
+                                                        if (unit=="N") { dist = dist * 0.8684 }
+                                                        var num = dist;
+                                                        var n = num.toFixed(2);
+                                                    
+                                                    }
+                                                    var gpsarr = n
+                                                    %>
+                                                    <%= gpsarr %> Km.
+                                                </td>
+
+                                                <td>
+                                                    <%=  data[i].addressin %>
+                                                </td>
+                                                <td>
+                                                    <%
+                                                   
+                                                    var imgg= ""
+                                                    if(data[i].checkout_lat == "" && data[i].checkout_lng == ""){
+
+                                                        var gpp = "---:---"
+                                                    }else{
+
+                                                    let latt1=data[i].storelat
+                                                    let lonn1=data[i].storelng
+                                                    let unit1 = "K";
+                                                    let latt2 = data[i].checkout_lat
+                                                    let lonn2 = data[i].checkout_lng
+    
+                                                    
+                                                    if ((latt1 == latt2) && (lonn1 == lonn2))
+                                                        {
+                                                        return 0;
+                                                        }
+                                                    else {
+                                                            var radlatt1 = Math.PI * latt1/180;
+                                                            var radlatt2 = Math.PI * latt2/180;
+                                                            var theta1 = lonn1-lonn2;
+                                                            var radtheta1 = Math.PI * theta1/180;
+                                                            var dist1 = Math.sin(radlatt1) * Math.sin(radlatt2) + Math.cos(radlatt1) * Math.cos(radlatt2) * Math.cos(radtheta1);
+                                                            if (dist1 > 1) {
+                                                                            dist1 = 1;
+                                                                            }
+                                                                            dist1 = Math.acos(dist1);
+                                                                            dist1 = dist1 * 180/Math.PI;
+                                                                            dist1 = dist1 * 60 * 1.1515;
+                                                            if (unit1=="K") { dist1 = dist1 * 1.609344 }
+                                                            if (unit1=="N") { dist1 = dist1 * 0.8684 }
+                                                            var num1 = dist1;
+                                                            var n1 = num1.toFixed(2);
+                                                        
+                                                        }
+                                                         gpp = n1
+                                                       
+                                                        
+
+                                                        }
+
+                                                        %>
+                                                        <%= gpp %> Km.
+                                                        
+                                                </td>
+                                                <td>
+                                                    <%=  data[i].addressout %>
+                                                </td>
+                                             
+                                                <td>
+                                                    <% 
+                                                    
+                                                    var time = 0
+                                                    if(data[i].checkout_date=="0000-00-00 00:00:00"){
+                                                        time = "---:---"
+                                                      }
+                                                      else{
+                                                      
+                                                      var diff_hour = 0
+                                                      var diff_minute = 0
+                                                      
+                                                      var  hour2= new Date(data[i].checkin_date).getHours()
+                                                      var  minute2= new Date(data[i].checkin_date).getMinutes()
+                                                      
+                                                      var hour1   = new Date(data[i].checkout_date).getHours()
+                                                      var minute1 = new Date(data[i].checkout_date).getMinutes()
+                                                      
+                                                      
+                                                      if(minute2 > minute1) {
+                                                        hour1--;
+                                                        minute1 += 60;
+                                                      }
+                                                      
+                                                      diff_minute = minute1 - minute2;
+                                                      diff_hour = hour1 - hour2;
+                                                      
+                                                       time = diff_hour +":"+diff_minute
+                                                       totalh = totalh + diff_hour
+                                                       totalm = totalm + diff_minute
+                                                    }
+                                                      
+                                                  
+
+                                                    %>
+                                                    <%= time  %> Hour.
+
+                                    
+                                                </td>
+
+                                               
+                                            </tr>
+                                            <% } %>
+
+                                                <th>
+                                                    Total Day's Present Out Of
+                                                </th>
+                                                <th>
+                                                    Total Working Hour's
+                                                </th>
+                                            <tr>
+                                                <td>
+                                                    <%
+                                                    var date1 = new Date(date1); 
+                                                    var date2 = new Date(date2); 
+                                                      
+                                                    // To calculate the time difference of two dates 
+                                                    var Difference_In_Time = date2.getTime() - date1.getTime(); 
+                                                      
+                                                    // To calculate the no. of days between two dates 
+                                                    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24); 
+
+                                                    %>
+                                                  <%= data.length %> / <%= Difference_In_Days %> 
+
+                                                </td>
+                                                <td>
+                                                    <% 
+                                                    var remain_minutes = 0
+                                                    var addinginhour =0
+                                                    if(totalm>60){
+                                                     remain_minutes = totalm % 60
+                                                     addinginhour = totalm /60
+                                                    }
+                                                    %>
+                                                    <%= totalh+parseInt(addinginhour) %> Hour's <%= remain_minutes %> Minute's 
+
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="copyright float-right">
+                    &copy;
+                    &nbsp;Devloped By SHUBHAM SONI
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!--   Core JS Files   -->
+    <script src="/assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+ 
+    <!-- Chartist JS -->
+    <script src="/assets/js/plugins/chartist.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="/assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="/assets/js/material-dashboard.min.js?v=2.1.0" type="text/javascript"></script>
+    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <script src="/assets/demo/demo.js"></script>
+
+<script>
+
+$(document).ready(function () {
+$('#dtHorizontalExample').DataTable({
+"scrollX": true
+});
+$('.dataTables_length').addClass('bs-select');
+});
+
+
+        $.getJSON(`/employee/employeeall`, result => {
+        console.log(result)
+        $.each(result, (i, item) =>
+            $("#employee").append(`
+
+            <option value="${item.id}">
+                                                            
+                ${item.id}    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                ${item.phone} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                ${item.name}    
+            </option> `));
+           
+
+    });
+</script>
+
+</body>
+
+</html>
